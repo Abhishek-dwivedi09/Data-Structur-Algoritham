@@ -1,0 +1,10 @@
+map interface -> there are 3 type of classes
+
+1-> hashMap - basically its store data in unoreder
+
+2-> linkedHashMap - this is orderd
+2-> sortedMap - there is class inside that CALLED treeMap its stored in sorted way
+
+in hashmap we add entries which come with key and value pair
+ex-> "akash", 21
+
