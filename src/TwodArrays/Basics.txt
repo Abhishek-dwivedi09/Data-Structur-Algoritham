@@ -1,0 +1,123 @@
+
+============================
+📘 2D ARRAY COMPLETE BASICS
+============================
+
+🧠 What is a 2D Array?
+-----------------------
+- A 2D array is an array of arrays, like a matrix or table.
+- It has rows and columns.
+- Syntax in Java:
+    int[][] matrix = new int[3][3]; // 3x3 matrix (3 rows, 3 columns)
+
+🧾 Example:
+-------------
+int[][] matrix = {
+    {1, 2, 3},
+    {4, 5, 6},
+    {7, 8, 9}
+};
+
+🔁 Traversal - Row-wise:
+-------------------------
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[0].length; j++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
+
+🔁 Traversal - Column-wise:
+----------------------------
+for (int j = 0; j < matrix[0].length; j++) {
+    for (int i = 0; i < matrix.length; i++) {
+        System.out.print(matrix[i][j] + " ");
+    }
+    System.out.println();
+}
+
+🧮 Basic Operations
+---------------------
+1. Find Max Element:
+    int max = Integer.MIN_VALUE;
+    for (int i = 0; i < matrix.length; i++) {
+        for (int j = 0; j < matrix[0].length; j++) {
+            if (matrix[i][j] > max) {
+                max = matrix[i][j];
+            }
+        }
+    }
+
+2. Row-wise Sum:
+    for (int i = 0; i < matrix.length; i++) {
+        int rowSum = 0;
+        for (int j = 0; j < matrix[0].length; j++) {
+            rowSum += matrix[i][j];
+        }
+        System.out.println("Sum of row " + i + " = " + rowSum);
+    }
+
+3. Column-wise Sum:
+    for (int j = 0; j < matrix[0].length; j++) {
+        int colSum = 0;
+        for (int i = 0; i < matrix.length; i++) {
+            colSum += matrix[i][j];
+        }
+        System.out.println("Sum of col " + j + " = " + colSum);
+    }
+
+📌 Transpose of Matrix:
+-------------------------
+for (int i = 0; i < matrix[0].length; i++) {
+    for (int j = 0; j < matrix.length; j++) {
+        System.out.print(matrix[j][i] + " ");
+    }
+    System.out.println();
+}
+
+📌 Diagonal Sum (Primary & Secondary):
+---------------------------------------
+int primarySum = 0, secondarySum = 0;
+for (int i = 0; i < matrix.length; i++) {
+    primarySum += matrix[i][i];                        // Top-left to bottom-right
+    secondarySum += matrix[i][matrix.length - 1 - i];  // Top-right to bottom-left
+}
+
+🔍 Search Element:
+-------------------
+int target = 5;
+boolean found = false;
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[0].length; j++) {
+        if (matrix[i][j] == target) {
+            found = true;
+            System.out.println("Found at " + i + ", " + j);
+        }
+    }
+}
+
+🟩 Identity Matrix Generator:
+------------------------------
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        if (i == j) System.out.print(1 + " ");
+        else System.out.print(0 + " ");
+    }
+    System.out.println();
+}
+
+🧮 Count Even & Odd:
+---------------------
+int even = 0, odd = 0;
+for (int i = 0; i < matrix.length; i++) {
+    for (int j = 0; j < matrix[0].length; j++) {
+        if (matrix[i][j] % 2 == 0) even++;
+        else odd++;
+    }
+}
+System.out.println("Even: " + even + ", Odd: " + odd);
+
+✅ Once you're comfortable with these, move to LeetCode problems:
+- Transpose Matrix: https://leetcode.com/problems/transpose-matrix/
+- Diagonal Sum: https://leetcode.com/problems/matrix-diagonal-sum/
+- Reshape Matrix: https://leetcode.com/problems/reshape-the-matrix/
